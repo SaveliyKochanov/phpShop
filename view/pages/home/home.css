@@ -1,0 +1,74 @@
+.header {
+}
+
+.container {
+	margin: 0 auto;
+	max-inline-size: 1440px;
+}
+
+.container--header {
+	inline-size: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 32px 102px;
+}
+
+.header__nav {
+}
+
+.header__nav-list {
+	display: flex;
+	gap: 40px;
+}
+
+.nav-list__item {
+}
+
+.nav-list__link {
+	font-size: 22px;
+	font-weight: 500;
+	letter-spacing: 0;
+	color: #807d7e;
+}
+
+/* .header__tasks {
+} */
+
+.header__tasks-list {
+	display: flex;
+	align-items: center;
+	gap: 11px;
+}
+
+/* ///////////////////////////////////// */
+.slider {
+	position: relative;
+	inline-size: 100%;
+	block-size: 200px;
+}
+
+.slider__container {
+	inline-size: 100%;
+	margin: auto;
+}
+
+.slider__list-item {
+	/* position: relative; */
+}
+
+.slider__list-img {
+	width: 100%;
+	background-position: center;
+	background-size: cover;
+}
+
+.slider__list-title {
+	position: absolute; /* Позиционирует заголовок поверх изображения */
+	bottom: 20px; /* Располагает заголовок внизу слайда */
+	left: 20px; /* Отступ слева */
+	color: #fff; /* Цвет текста */
+	background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон за заголовком */
+	padding: 10px; /* Отступы вокруг текста */
+	border-radius: 5px; /* Скругление углов */
+}
