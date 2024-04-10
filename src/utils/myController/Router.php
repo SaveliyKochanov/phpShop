@@ -28,7 +28,11 @@ class Router {
                    
                     switch ($item['url']){
                         case '/qq':
-                            print_r($item);
+                            $method=$item['method'];
+                            $action=new $item['class'];
+                            $action->$method($_POST);
+                            die();
+                        case '/auth':
                             $method=$item['method'];
                             $action=new $item['class'];
                             $action->$method($_POST);
