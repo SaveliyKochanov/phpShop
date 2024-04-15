@@ -19,12 +19,11 @@ class Connect{
             );
 
             $this->CreateTables();
-
+            $this->CheckCategories();
             
         }
         
     }
-
     private function CreateTables(){
         self::$connect->query("CREATE TABLE IF NOT EXISTS Users (
             UserID INT AUTO_INCREMENT PRIMARY KEY,
@@ -72,6 +71,42 @@ class Connect{
             FOREIGN KEY (ProductID) REFERENCES Products(ProductID)
         )");
     }
+
+    private function CheckCategories() {
+        $categories = self::$connect->query("SELECT * FROM Categories");
+        $MenCategory = false;
+        $WomenCategory = false;
+    
+        while ($category = mysqli_fetch_assoc($categories)) {
+            if ($category['CategoryName'] === 'Мужчины' && $category['CategoryID'] == 1) {
+                $MenCategory = true;
+            }
+            if ($category['CategoryName'] === 'Женщины' && $category['CategoryID'] == 2) {
+                $WomenCategory = true;
+            }
+        }
+
+        if (!$MenCategory && !$WomenCategory) {
+            self::$connect->query("DROP TABLE Categories");
+            $this->CreateTables();
+            self::$connect->query("INSERT INTO Categories (CategoryName, Description)
+            VALUES
+            ('Мужская одежда', 'Категория мужской одежды включает в себя футболки, джинсы, куртки и многое другое.'),
+            ('Женская одежда', 'Категория женской одежды включает платья, юбки, блузки и многое другое.');");
+
+        } 
+    }
+    private function CreateBaseProducts(){
+        self::$connect->query("INSERT INTO `Products` (`ProductID`, `CategoryID`, `ProductName`, `Description`, `Price`, `Stock`, `ImageURL`) VALUES 
+        (NULL, '1', 'Мужская футболка', 'Описание мужской футболки', 499.99, 100, './images/tshortM.webp'),
+        (NULL, '1', 'Мужские джинсы', 'Описание мужских джинсов', 999.99, 50, './images/jeansM.webp'),
+        (NULL, '2', 'Женская футболка', 'Описание женской футболки', 777.77, 77, './images/probka.webp'),
+        (NULL, '2', 'Женское платье', 'Описание женского платья', 1299.99, 70, './images/gown.webp'),
+        (NULL, '2', 'Женский свитер', 'Описание женского свитера', 799.99, 80, './images/handcuffs.webp');");
+
+
+    }
+    
 
     
 }
