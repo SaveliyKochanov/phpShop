@@ -12,11 +12,13 @@ Router::myPost('/qq',Creator::class,'CreatePage');
 
 //get
 Router::myGet('/','home');
-Router::myGet('/pizda','pizda');
+Router::myGet('/forms','forms');
 
 
 //post
-Router::myPost('/auth', Auth::class, 'registration');
+Router::myPost('/registration', Auth::class, 'registration');
+Router::myPost('/login', Auth::class, 'login');
+Router::myPost('/logout', Auth::class, 'logout');
 
 
 

@@ -24,20 +24,10 @@ class Router {
 
             if($item['url'] === '/'.$rout){
                 if($_SERVER['REQUEST_METHOD'] === 'POST'){
-                    
-                   
-                    switch ($item['url']){
-                        case '/qq':
-                            $method=$item['method'];
-                            $action=new $item['class'];
-                            $action->$method($_POST);
-                            die();
-                        case '/auth':
-                            $method=$item['method'];
-                            $action=new $item['class'];
-                            $action->$method($_POST);
-                            die();
-                    }
+                        $method=$item['method'];
+                        $action=new $item['class'];
+                        $action->$method($_POST);
+                        die();
                 }
                 else{
                     require_once __DIR__. './../../../view/pages/'. $item['method'] . '/'. $item['method'] . '.php';
