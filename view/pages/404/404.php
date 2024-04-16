@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./view/partials/header.css">
     <link rel="stylesheet" href="./view/partials/footer.css">
+    <link rel="stylesheet" href="./view/global.css">
 
     <link rel="stylesheet" href="./view/pages/404/404.css">
     <title>404</title>

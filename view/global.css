@@ -5,10 +5,9 @@
 }
 
 body {
-	width: 1440px;
 	margin: 0 auto;
-	font-family: Causten, sans-serif;
-	/* overflow: hidden; */
+	width: 100%;
+	font-family: 'Tilt Neon', sans-serif;
 }
 
 h1,

@@ -1,0 +1,122 @@
+.container {
+	margin: 0 auto;
+	inline-size: 1700px;
+	block-size: 100%;
+	padding: 0 15px;
+}
+
+/* ////////////// */
+.main__header {
+	font-size: 31px;
+}
+
+.main-wrapper {
+	display: flex;
+	flex-direction: row;
+	column-gap: 114px;
+}
+
+.main__content {
+	inline-size: 1104px;
+	block-size: 630px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	column-gap: 114px;
+}
+
+/* Стили для таблицы */
+.main__panel {
+	border-radius: 8px;
+	overflow-y: scroll;
+	scrollbar-width: none;
+	border: 1px solid beige;
+}
+
+.panel-table {
+	width: 100%;
+	border-collapse: collapse;
+	text-align: center;
+	background-color: #ffffff;
+	color: #000000;
+	font-size: 22px;
+}
+
+.save-button {
+	inline-size: 323px;
+	min-block-size: 55px;
+	color: #fff;
+	background-color: #2e2d2d;
+	align-self: flex-end;
+	border: 1px solid #2e2d2d;
+	border-radius: 8px;
+	font-size: 20px;
+}
+
+.table__header-row {
+	background-color: #2e2d2d;
+	color: #fff;
+}
+
+td {
+	block-size: 99px;
+}
+
+.panel-table img {
+	display: block;
+	inline-size: 100px;
+	block-size: 100px;
+	border: 1px solid #2e2d2d;
+	margin: 0 auto;
+}
+
+/* СТИЛИ КАРТОЧКИ ДОБАВЛЕНИЯ ТОВАРА */
+.panel-form {
+	display: flex;
+	flex-direction: column;
+	block-size: 657px;
+	padding: 24px 32px 12px 32px;
+	border: 1px solid #2e2d2d;
+	border-radius: 8px;
+	color: #3c4242;
+}
+
+label {
+	font-size: 22px;
+}
+
+input {
+	inline-size: 384px;
+	block-size: 58px;
+	font-size: 22px;
+	margin: 0 0 12px 0;
+}
+.product-category {
+	font-size: 22px;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: white;
+    width: 100%;
+    box-sizing: border-box; 
+    -moz-appearance: none;
+    -webkit-appearance: none; 
+    appearance: none;
+}
+
+
+.form__add-button {
+	inline-size: 386px;
+	block-size: 55px;
+	color: #fff;
+	background-color: #2e2d2d;
+	text-align: center;
+	padding: 15px 80px;
+	font-size: 20px;
+	border: 1px solid #2e2d2d;
+	border-radius: 8px;
+}
+
+.button:hover {
+	background-color: #3c4242;
+}

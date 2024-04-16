@@ -20,7 +20,7 @@ class Connect{
 
             $this->CreateTables();
             $this->CheckCategories();
-            
+            //$this->CreateBaseProducts();
         }
         
     }
@@ -34,10 +34,11 @@ class Connect{
             CategoryID INT AUTO_INCREMENT PRIMARY KEY,
             CategoryName VARCHAR(255) NOT NULL,
             Description TEXT
-        )");
+        )");        
         self::$connect->query("CREATE TABLE IF NOT EXISTS Products (
             ProductID INT AUTO_INCREMENT PRIMARY KEY,
             CategoryID INT,
+            ProductBrand VARCHAR(255) NOT NULL,
             ProductName VARCHAR(255) NOT NULL,
             Description TEXT,
             Price DECIMAL(10, 2) NOT NULL,
@@ -78,31 +79,31 @@ class Connect{
         $WomenCategory = false;
     
         while ($category = mysqli_fetch_assoc($categories)) {
-            if ($category['CategoryName'] === 'Мужчины' && $category['CategoryID'] == 1) {
+            if (!($category['CategoryName'] === 'Мужчины')) {
                 $MenCategory = true;
             }
-            if ($category['CategoryName'] === 'Женщины' && $category['CategoryID'] == 2) {
+            if (!($category['CategoryName'] === 'Женщины')) {
                 $WomenCategory = true;
             }
         }
 
-        if (!$MenCategory && !$WomenCategory) {
-            self::$connect->query("DROP TABLE Categories");
-            $this->CreateTables();
+        if (!$MenCategory) {
             self::$connect->query("INSERT INTO Categories (CategoryName, Description)
-            VALUES
-            ('Мужская одежда', 'Категория мужской одежды включает в себя футболки, джинсы, куртки и многое другое.'),
-            ('Женская одежда', 'Категория женской одежды включает платья, юбки, блузки и многое другое.');");
-
+                    VALUES ('Мужская одежда', 'Категория мужской одежды включает в себя футболки, джинсы, куртки и многое другое.')");
         } 
+        if (!$WomenCategory) {
+            self::$connect->query("INSERT INTO Categories (CategoryName, Description)
+            VALUES ('Женская одежда', 'Категория женской одежды включает платья, юбки, блузки и многое другое.')");
+        } 
+       
     }
     private function CreateBaseProducts(){
-        self::$connect->query("INSERT INTO `Products` (`ProductID`, `CategoryID`, `ProductName`, `Description`, `Price`, `Stock`, `ImageURL`) VALUES 
-        (NULL, '1', 'Мужская футболка', 'Описание мужской футболки', 499.99, 100, './images/tshortM.webp'),
-        (NULL, '1', 'Мужские джинсы', 'Описание мужских джинсов', 999.99, 50, './images/jeansM.webp'),
-        (NULL, '2', 'Женская футболка', 'Описание женской футболки', 777.77, 77, './images/probka.webp'),
-        (NULL, '2', 'Женское платье', 'Описание женского платья', 1299.99, 70, './images/gown.webp'),
-        (NULL, '2', 'Женский свитер', 'Описание женского свитера', 799.99, 80, './images/handcuffs.webp');");
+        self::$connect->query("INSERT INTO `Products` (`ProductID`, `CategoryID`, `ProductBrand`, `ProductName`, `Description`, `Price`, `Stock`, `ImageURL`) VALUES 
+        (NULL, '1', 'NIKE', 'Мужская футболка', 'Описание мужской футболки', 499.99, 100, './images/tshortM.webp'),
+        (NULL, '1', 'NIKE', 'Мужские джинсы', 'Описание мужских джинсов', 999.99, 50, './images/jeansM.webp'),
+        (NULL, '2', 'NIKE', 'Женская футболка', 'Описание женской футболки', 777.77, 77, './images/probka.webp'),
+        (NULL, '2', 'NIKE', 'Женское платье', 'Описание женского платья', 1299.99, 70, './images/gown.webp'),
+        (NULL, '2', 'NIKE', 'Женский свитер', 'Описание женского свитера', 799.99, 80, './images/handcuffs.webp');");
 
 
     }
