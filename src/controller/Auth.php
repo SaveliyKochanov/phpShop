@@ -7,26 +7,20 @@ use servises\Connect;
 class Auth{
 
     public function registration($data){
-       
         $Email = $data['email'];
-        $password1 = $data['password1'];
-        $password2 = $data['password2'];
-        if($password1 == $password2){
-            $password = $password1;
+        $password = $data['password'];
+        try{
             if($Email != "" && $password != ""){
-                Connect::$connect->query("INSERT INTO `Users` (`Email`, `Password`) VALUES ('$Email', '$password')");
+                Connect::$connect->query("INSERT INTO `Users` (`Email`, `Password`, `Role`) VALUES ('$Email', '$password', '10')");
             }
-    
+        }
+        finally{
             $newData = [
                 'email' => $Email,
                 'password' => $password,
-                'return_url' => $data['return_url']
             ];
-    
             $this->login($newData);
         }
-        $return_url = $data['return_url'];
-        header("Location: $return_url");
     }
     public function login($data){
         $Email = $data['email'];
@@ -36,11 +30,11 @@ class Auth{
             $result = mysqli_fetch_assoc($result);
             if($password == $result['Password']){
                 session_start();
-                $_SESSION['email'] = $Email;
+                $_SESSION['email'] = $result['Email'];
+                $_SESSION['role'] = $result['Role'];
             }
         }
-        $return_url = $data['return_url'];
-        header("Location: $return_url");
+        header("Location: /");
     }
     public function logout($data){
         $_SESSION = array();

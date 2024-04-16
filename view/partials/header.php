@@ -1,3 +1,7 @@
+<?
+session_start();
+print_r($_SESSION);
+?>
 <header class="header">
     <div class="container">
         <nav class="header__nav">
@@ -34,7 +38,7 @@
                 </a>
             </li>
             <li class="actions-list__item">
-                <a class="actions-list__link" href="pages/auth.html">
+                <a class="actions-list__link" href="/auth">
                     <img
                     class="action-list__item-image"
                     src="./images/header-icons/header__authentication-icon.svg"

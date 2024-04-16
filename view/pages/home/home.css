@@ -1,10 +1,10 @@
 
 
-.nav-list__link:hover {
+/* .nav-list__link:hover {
 }
 
 .header__search-form {
-}
+} */
 
 /* .search-form__input {
 	inline-size: 267px;
@@ -182,7 +182,7 @@ banners__man-link
 }
 
 .spring-summer-banner {
-	background-image: url('../images/main-icons/spring-summer-banner.png');
+	background-image: url('./../../../images/main-icons/spring-summer-banner.png');
 }
 
 .banners__item-header {
@@ -215,13 +215,13 @@ banners__man-link
 }
 
 .jacket-banner {
-	background-image: url('../images/main-icons/jacket-banner.png');
+	background-image: url('./../../../images/main-icons/jacket-banner.png');
 }
 
 .denim-banner {
-	background-image: url('../images/main-icons/denim-banner.png');
+	background-image: url('./../../../images/main-icons/denim-banner.png');
 }
 
 .shoes-banner {
-	background-image: url('../images/main-icons/shoes-banner.png');
+	background-image: url('./../../../images/main-icons/shoes-banner.png');
 }

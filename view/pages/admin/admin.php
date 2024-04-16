@@ -12,6 +12,9 @@
 	</head>
 	<body>
 		<? include './view/partials/header.php'?>
+		<?
+		if($_SESSION['role'] < 49) header("Location: /");
+		?>
 		<main class="main">
 			<div class="container">
 				<h2 class="main__header">Панель администратора</h2>

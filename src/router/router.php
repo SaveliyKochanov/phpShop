@@ -15,6 +15,8 @@ Router::myPost('/qq',Creator::class,'CreatePage');
 Router::myGet('/','home');
 Router::myGet('/forms','forms');
 Router::myGet('/admin','admin');
+Router::myGet('/auth', 'auth');
+Router::myGet('/reg', 'reg');
 
 
 //post

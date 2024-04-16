@@ -28,7 +28,8 @@ class Connect{
         self::$connect->query("CREATE TABLE IF NOT EXISTS Users (
             UserID INT AUTO_INCREMENT PRIMARY KEY,
             Email VARCHAR(255) NOT NULL UNIQUE,
-            Password VARCHAR(255) NOT NULL
+            Password VARCHAR(255) NOT NULL,
+            Role INT NOT NULL
         )");
         self::$connect->query("CREATE TABLE IF NOT EXISTS Categories (
             CategoryID INT AUTO_INCREMENT PRIMARY KEY,

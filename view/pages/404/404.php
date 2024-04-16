@@ -14,7 +14,7 @@
 <? include './view/partials/header.php'?>
 
 <div class="container">
-
+    STARICA NOT FOUND -> OSHIBKA 404 IDI NAHUY
 </div>
 
 <? include './view/partials/footer.php'?>
