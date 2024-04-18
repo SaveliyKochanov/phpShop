@@ -85,7 +85,7 @@
 							<h2 class="banners__item-header">ВЕСНА'24</h2>
 							<div class="banners__item-links">
 								<a class="banners__man-link" href="">Для неё</a>
-								<a class="banners__woman-link" href="">Для него</a>
+								<a class="banners__woman-link" href="/man">Для него</a>
 							</div>
 						</li>
 						<li class="banners__item jacket-banner">

@@ -1,0 +1,96 @@
+.visually-hidden {
+	position: absolute;
+	inline-size: 1px;
+	block-size: 1px;
+	overflow: hidden;
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	white-space: nowrap;
+}
+
+.container {
+	margin: 0 auto;
+	inline-size: 1700px;
+	block-size: 100%;
+	padding: 0 15px;
+}
+
+.top-block__heading {
+	display: flex;
+	color: #000;
+	justify-content: center;
+	text-align: center;
+}
+
+.top-block__title {
+	font-size: 34px;
+}
+
+.filters-block__filters {
+	position: relative;
+}
+
+.filters-block__text {
+	font-size: 25px;
+}
+
+.dropdown-menu {
+	display: none;
+	position: absolute;
+	background-color: #fff;
+	max-inline-size: 459px;
+	padding: 38px 52px;
+}
+
+.dropdown-menu__header {
+	font-size: 22px;
+	font-weight: 500;
+	margin: 0 0 22px 0;
+}
+
+.dropdown-menu__item {
+	margin: 0 0 22px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #000;
+}
+
+.dropdown-menu__item-header {
+	font-size: 18px;
+	margin: 0 0 33px;
+}
+
+.dropdown-menu__input-label {
+}
+
+.dropdown-menu__input {
+	inline-size: 133px;
+	padding: 6px 15px;
+	border: 1px solid #bebcbd;
+	border-radius: 8px;
+}
+
+.dropdown-menu__item-content {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 12px;
+}
+
+/* CARDS */
+.card{
+	inline-size: 361px;
+	border: 1px solid black;
+	block-size: 479px;
+}
+.card__image{
+	inline-size: 100%;
+	block-size: 100%;
+}
+.cards__list {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 73px 52px;
+}
+
+.cards__list-item {
+	inline-size: 100%;
+}

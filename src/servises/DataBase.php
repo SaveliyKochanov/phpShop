@@ -42,6 +42,7 @@ class Connect{
             ProductBrand VARCHAR(255) NOT NULL,
             ProductName VARCHAR(255) NOT NULL,
             Description TEXT,
+            Size VARCHAR(255),
             Price DECIMAL(10, 2) NOT NULL,
             Stock INT NOT NULL,
             ImageURL VARCHAR(255),
@@ -99,12 +100,12 @@ class Connect{
        
     }
     private function CreateBaseProducts(){
-        self::$connect->query("INSERT INTO `Products` (`ProductID`, `CategoryID`, `ProductBrand`, `ProductName`, `Description`, `Price`, `Stock`, `ImageURL`) VALUES 
-        (NULL, '1', 'NIKE', 'Мужская футболка', 'Описание мужской футболки', 499.99, 100, './images/tshortM.webp'),
-        (NULL, '1', 'NIKE', 'Мужские джинсы', 'Описание мужских джинсов', 999.99, 50, './images/jeansM.webp'),
-        (NULL, '2', 'NIKE', 'Женская футболка', 'Описание женской футболки', 777.77, 77, './images/probka.webp'),
-        (NULL, '2', 'NIKE', 'Женское платье', 'Описание женского платья', 1299.99, 70, './images/gown.webp'),
-        (NULL, '2', 'NIKE', 'Женский свитер', 'Описание женского свитера', 799.99, 80, './images/handcuffs.webp');");
+        self::$connect->query("INSERT INTO `Products` (`ProductID`, `CategoryID`, `ProductBrand`, `ProductName`, `Description`, `Size`, `Price`, `Stock`, `ImageURL`) VALUES 
+        (NULL, '1', 'NIKE', 'Мужская футболка', 'Описание мужской футболки', 'XS',  499.99, 100, './images/tshortM.webp'),
+        (NULL, '1', 'Adidas', 'Мужские джинсы', 'Описание мужских джинсов', 'M', 999.99, 50, './images/jeansM.webp'),
+        (NULL, '1', 'Tom Ford', 'Женская футболка', 'Описание женской футболки', 'XXXXL', 777.77, 77, './images/probka.webp'),
+        (NULL, '2', 'NIKE', 'Женское платье', 'Описание женского платья', 'S', 1299.99, 70, './images/gown.webp'),
+        (NULL, '2', 'Adidas', 'Женский свитер', 'Описание женского свитера', 'L', 799.99, 80, './images/handcuffs.webp');");
 
 
     }
