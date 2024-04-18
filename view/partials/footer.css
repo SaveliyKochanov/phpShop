@@ -1,34 +1,38 @@
 .footer {
-    padding: 87px 0;
-   }
-   
-   .footer__main {
-    display: flex;
-    justify-content: space-between;
-   }
-   
-   .footer__title {
-    font-size: 32px;
-    text-decoration: underline;
-    font-weight: normal;
-    margin: 0 0 6px;
-   }
-   
-   .footer__menu {
-    display: flex;
-    flex-direction: column;
-    row-gap: 10px;
-   }
-   
-   .footer__menu-link {
-    color: #828080;
-   }
-   
-   .footer__menu--payment {
-    justify-content: space-between;
-    align-items: center;
-   }
-   
-   .footer__payment-icon {
-    block-size: 40px;
-   }
+	padding: 87px 0;
+}
+
+.footer__main {
+	display: flex;
+	justify-content: space-between;
+}
+
+.footer__block {
+}
+
+.footer__title {
+	font-size: 32px;
+	text-decoration: underline;
+	font-weight: normal;
+	margin: 0 0 6px;
+}
+
+.footer__menu {
+	display: flex;
+	flex-direction: column;
+	row-gap: 10px;
+}
+
+.footer__menu-link {
+	color: #828080;
+}
+
+.footer__menu--payment {
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.footer__payment-icon {
+	block-size: 40px;
+}

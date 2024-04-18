@@ -7,6 +7,7 @@
 		<link rel="stylesheet" href="./view/global.css" />
 		<link rel="stylesheet" href="./view/partials/header.css">
     	<link rel="stylesheet" href="./view/partials/footer.css">
+    	<link rel="stylesheet" href="./view/partials/fot-hed-media.css">
 
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

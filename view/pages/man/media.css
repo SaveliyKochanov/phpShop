@@ -8,35 +8,14 @@
 	.container {
 	 inline-size: 728px;
 	}
+	
    }
    
    @media (max-width: 480px) {
 	.container {
 	 inline-size: 440px;
 	}
-   
-	.header__nav-list {
-	 display: none;
-	}
-   
-	.header__nav-button {
-	 display: block;
-	 inline-size: 30px;
-	}
-   
-	.header__actions-list {
-	 position: fixed;
-	 bottom: 0;
-	 left: 0;
-	 width: 100%;
-	 display: flex;
-	 justify-content: center;
-	 align-items: center;
-	 background-color: #fff;
-	 box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.1);
-	 z-index: 999;
-	 padding: 10px 0;
-	}
+
 	/* TOP block */
 	.top-block__heading {
 	 margin: 0 0 45px 0;
@@ -56,6 +35,4 @@
 	 row-gap: 35px;
 	}
    
-	.card__name {
-	}
 }

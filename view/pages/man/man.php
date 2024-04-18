@@ -93,6 +93,7 @@ $cards = $filteredProducts;
 		<link rel="stylesheet" href="./view/global.css" />
 		<link rel="stylesheet" href="./view/partials/header.css">
     	<link rel="stylesheet" href="./view/partials/footer.css">
+    	<link rel="stylesheet" href="./view/partials/fot-hed-media.css">
 		<link rel="stylesheet" href="./view/pages/man/man.css" />
 		<link rel="stylesheet" href="./view/pages/man/media.css" />
 
@@ -118,7 +119,6 @@ $cards = $filteredProducts;
 							<ul class="dropdown-menu__list">
 							<form action="<?$_GET['rout']?>" method="get">
 							
-							<button type="submit" name="filter" value="1">Фильтровать</button>
 								<li class="dropdown-menu__item">
 									
 									<p class="dropdown-menu__item-header">Цена</p>
@@ -162,7 +162,7 @@ $cards = $filteredProducts;
 									</ul>
 								</li>
 								<li class="dropdown-menu__item">
-									
+								<button type="submit" name="filter" value="1">Фильтровать</button>
 								</li>
 							</form>
 

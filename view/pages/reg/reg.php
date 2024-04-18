@@ -6,6 +6,7 @@
 		<link rel="stylesheet" href="./view/global.css" />
 		<link rel="stylesheet" href="./view/partials/header.css">
     	<link rel="stylesheet" href="./view/partials/footer.css">
+    	<link rel="stylesheet" href="./view/partials/fot-hed-media.css">
 
 		<link rel="stylesheet" href="./view/pages/reg/reg.css" />
 		<link rel="stylesheet" href="./view/pages/reg/media.css" />
