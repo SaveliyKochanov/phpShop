@@ -35,7 +35,7 @@ a {
 }
 
 img {
-	width: 100%;
+	inline-size: 100%;
 }
 
 
@@ -107,26 +107,4 @@ img {
 	.footer__menu--active {
 	 display: flex;
 	}
-   
-	/* .footer__menu--payment {
-	 display: flex;
-	 flex-direction: row;
-	} */
-   }
-   
-   /* @media (max-width: 480px) {
-	.container {
-	 inline-size: 440px;
-	}
-   
-	.banners__item {
-	 block-size: 500px;
-	}
-   
-	.banners__item-header {
-	 font-size: 56px;
-	 color: #fff;
-	 padding: 160px 0 0 0;
-	 text-transform: uppercase;
-	}
-   } 
+}

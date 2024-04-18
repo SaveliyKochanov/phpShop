@@ -78,7 +78,6 @@
 /* CARDS */
 .card{
 	inline-size: 361px;
-	border: 1px solid black;
 	block-size: 479px;
 }
 .card__image{

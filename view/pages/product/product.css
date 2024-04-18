@@ -1,0 +1,119 @@
+.container {
+	margin: 0 auto;
+	inline-size: 1700px;
+	block-size: 100%;
+	padding: 0 15px;
+   }
+   
+   .main {
+	margin: 0 0 176px 0;
+   }
+   
+   .main__content {
+	display: flex;
+	column-gap: 43px;
+   }
+   
+   .main__slider {
+	overflow: hidden;
+   }
+   
+   .main__slider-list {
+	display: flex;
+	column-gap: 6px;
+	overflow-x: scroll;
+	transition: transform 0.2s ease-out;
+	will-change: transform;
+	user-select: none;
+	scrollbar-width: none;
+   }
+   
+   .main__slider-item {
+	/* max-inline-size: 100%; */
+   }
+   
+   .main__slider-image {
+	inline-size: 100%;
+   }
+   
+   .main__description {
+	inline-size: 429px;
+	padding: 43px 0 0 0;
+   }
+   
+   .description-name {
+	font-size: 40px;
+	margin: 0 0 13px 0;
+   }
+   
+   .description-price {
+	display: inline-block;
+	margin: 0 0 33px 0;
+	color: #fff;
+	padding: 4px 48px;
+	background-color: #3c4242;
+	border-radius: 12px;
+	margin: 0 0 33px 0;
+   }
+   
+   .description-size {
+	margin: 0 0 25px 0;
+   }
+   
+   .choose-size {
+	border: none;
+	margin: 0 0 27px;
+	padding: 0;
+   }
+   
+   .size-selector {
+	display: flex;
+	column-gap: 24px;
+   }
+   
+   .size-selector__radio {
+	display: none;
+   }
+   
+   .size-selector__label {
+	inline-size: 38px;
+	block-size: 38px;
+	text-align: center;
+	display: inline-block;
+	padding: 9px 13px 13px 8px;
+	border: 1px solid #bebcbd;
+	border-radius: 12px;
+	cursor: pointer;
+	transition: background-color 0.3s, color 0.3s;
+   }
+   
+   .size-selector__label:hover {
+	background-color: #f0f0f0;
+   }
+   
+   .size-selectorradio:checked + .size-selectorlabel {
+	background-color: #333; /* Цвет фона для выбранной кнопки */
+	color: #fff; /* Цвет текста для выбранной кнопки */
+	border-color: #333; /* Граница для выбранной кнопки */
+   }
+   
+   .add-to-cart--button {
+	color: #fff;
+	font-size: 18px;
+	text-align: center;
+	inline-size: 345px;
+	background-color: #82d580;
+	border: none;
+	border-radius: 8px;
+	padding: 12px 0;
+	transition: background-color 0.3s, color 0.3s;
+	margin: 0 0 36px 0;
+   }
+   
+   .add-to-cart--button:hover {
+	background-color: #59bf57;
+   }
+   
+   .description-text {
+	font-size: 18px;
+   }

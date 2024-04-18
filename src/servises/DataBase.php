@@ -20,7 +20,7 @@ class Connect{
 
             $this->CreateTables();
             $this->CheckCategories();
-            //$this->CreateBaseProducts();
+            $this->CreateBaseProducts();
         }
         
     }
@@ -42,11 +42,16 @@ class Connect{
             ProductBrand VARCHAR(255) NOT NULL,
             ProductName VARCHAR(255) NOT NULL,
             Description TEXT,
+            ImageURL VARCHAR(255),
+            FOREIGN KEY (CategoryID) REFERENCES Categories(CategoryID)
+        )");
+        self::$connect->query("CREATE TABLE IF NOT EXISTS ProductVariants (
+            VariantID INT AUTO_INCREMENT PRIMARY KEY,
+            ProductID INT,
             Size VARCHAR(255),
             Price DECIMAL(10, 2) NOT NULL,
             Stock INT NOT NULL,
-            ImageURL VARCHAR(255),
-            FOREIGN KEY (CategoryID) REFERENCES Categories(CategoryID)
+            FOREIGN KEY (ProductID) REFERENCES Products(ProductID)
         )");
         self::$connect->query("CREATE TABLE IF NOT EXISTS Orders (
             OrderID INT AUTO_INCREMENT PRIMARY KEY,
@@ -100,12 +105,45 @@ class Connect{
        
     }
     private function CreateBaseProducts(){
-        self::$connect->query("INSERT INTO `Products` (`ProductID`, `CategoryID`, `ProductBrand`, `ProductName`, `Description`, `Size`, `Price`, `Stock`, `ImageURL`) VALUES 
-        (NULL, '1', 'NIKE', 'Мужская футболка', 'Описание мужской футболки', 'XS',  499.99, 100, './images/tshortM.webp'),
-        (NULL, '1', 'Adidas', 'Мужские джинсы', 'Описание мужских джинсов', 'M', 999.99, 50, './images/jeansM.webp'),
-        (NULL, '1', 'Tom Ford', 'Женская футболка', 'Описание женской футболки', 'XXXXL', 777.77, 77, './images/probka.webp'),
-        (NULL, '2', 'NIKE', 'Женское платье', 'Описание женского платья', 'S', 1299.99, 70, './images/gown.webp'),
-        (NULL, '2', 'Adidas', 'Женский свитер', 'Описание женского свитера', 'L', 799.99, 80, './images/handcuffs.webp');");
+        if(mysqli_num_rows(self::$connect->query("SELECT * FROM Products")) === 0){
+            self::$connect->query("INSERT INTO Products (CategoryID, ProductBrand, ProductName, Description, ImageURL) VALUES
+            (1, 'NIKE', 'Мужская футболка', 'Описание мужской футболки', './images/tshortM.webp'),
+            (1, 'Adidas', 'Мужские джинсы', 'Описание мужских джинсов', './images/jeansM.webp'),
+            (1, 'Tom Ford', 'Женская футболка', 'Описание женской футболки', './images/probka.webp'),
+            (2, 'NIKE', 'Женское платье', 'Описание женского платья', './images/gown.webp'),
+            (2, 'Adidas', 'Женский свитер', 'Описание женского свитера', './images/handcuffs.webp')");
+
+        self::$connect->query("INSERT INTO Products (CategoryID, ProductBrand, ProductName, Description, ImageURL) VALUES
+        (1, 'Nike', 'Кроссовки Air Max', 'Удобные кроссовки для бега', './images/check.png'),
+        (1, 'Adidas', 'Спортивные штаны', 'Штаны для тренировок и повседневной носки', './images/exit.png'),
+        (1, 'Calvin Klein', 'Джинсы Slim Fit', 'Джинсы современного кроя', './images/home.png'),
+        (1, 'Balenciaga', 'Куртка Oversize', 'Модная куртка оверсайз для прохладной погоды', './images/main_slider-image.png')
+        ");
+            self::CreateBaseVariants();
+        }
+        
+        
+
+    }
+    private function CreateBaseVariants(){
+        
+        self::$connect->query("INSERT INTO ProductVariants (ProductID, Size, Price, Stock) VALUES (1, 'S', 499.99, 90)");
+        self::$connect->query("INSERT INTO ProductVariants (ProductID, Size, Price, Stock) VALUES (1, 'M', 499.99, 85)");
+        self::$connect->query("INSERT INTO ProductVariants (ProductID, Size, Price, Stock) VALUES (1, 'L', 499.99, 80)");
+        self::$connect->query("INSERT INTO ProductVariants (ProductID, Size, Price, Stock) VALUES (1, 'XL', 499.99, 75)");
+        self::$connect->query("INSERT INTO ProductVariants (ProductID, Size, Price, Stock) VALUES (2, 'L', 999.99, 45)");
+        self::$connect->query("INSERT INTO ProductVariants (ProductID, Size, Price, Stock) VALUES (2, 'XL', 999.99, 40)");
+        self::$connect->query("INSERT INTO ProductVariants (ProductID, Size, Price, Stock) VALUES (2, 'XXL', 999.99, 35)");
+        self::$connect->query("INSERT INTO ProductVariants (ProductID, Size, Price, Stock) VALUES (3, 'S', 777.77, 72)");
+        self::$connect->query("INSERT INTO ProductVariants (ProductID, Size, Price, Stock) VALUES (3, 'M', 777.77, 68)");
+        self::$connect->query("INSERT INTO ProductVariants (ProductID, Size, Price, Stock) VALUES (3, 'L', 777.77, 64)");
+        self::$connect->query("INSERT INTO ProductVariants (ProductID, Size, Price, Stock) VALUES (4, 'M', 1299.99, 65)");
+        self::$connect->query("INSERT INTO ProductVariants (ProductID, Size, Price, Stock) VALUES (4, 'L', 1299.99, 60)");
+        self::$connect->query("INSERT INTO ProductVariants (ProductID, Size, Price, Stock) VALUES (4, 'XL', 1299.99, 55)");
+        self::$connect->query("INSERT INTO ProductVariants (ProductID, Size, Price, Stock) VALUES (5, 'S', 799.99, 75)");
+        self::$connect->query("INSERT INTO ProductVariants (ProductID, Size, Price, Stock) VALUES (5, 'M', 799.99, 70)");
+        self::$connect->query("INSERT INTO ProductVariants (ProductID, Size, Price, Stock) VALUES (5, 'XL', 799.99, 65)");
+        self::$connect->query("INSERT INTO ProductVariants (ProductID, Size, Price, Stock) VALUES (5, 'XXL', 799.99, 60)");
 
 
     }

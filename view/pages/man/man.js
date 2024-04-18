@@ -1,3 +1,4 @@
+
 const filtersTest = document.querySelector('.filters-block__text')
 
 filtersTest.addEventListener('click', () => {

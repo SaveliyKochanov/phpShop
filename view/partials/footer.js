@@ -1,6 +1,9 @@
+
 document.addEventListener('DOMContentLoaded', () => {
+    console.log("fdsfsdfdsfd");
+
     const titles = document.querySelectorAll('.footer__title')
-   
+
     // Функция для проверки ширины экрана
     function isMobile() {
      return window.matchMedia('(max-width: 768px)').matches
@@ -11,7 +14,6 @@ document.addEventListener('DOMContentLoaded', () => {
       // Выполняем логику только если ширина экрана соответствует мобильной
       if (isMobile()) {
        const menu = this.nextElementSibling
-   
        if (menu.style.display === 'block') {
         menu.style.display = 'none'
        } else {

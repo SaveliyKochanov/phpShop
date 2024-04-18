@@ -18,6 +18,7 @@ Router::myGet('/admin','admin');
 Router::myGet('/auth', 'auth');
 Router::myGet('/reg', 'reg');
 Router::myGet('/man', 'man');
+Router::myGet('/product', 'product');
 
 
 //post

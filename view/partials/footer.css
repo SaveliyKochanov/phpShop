@@ -7,9 +7,6 @@
     justify-content: space-between;
    }
    
-   .footer__block {
-   }
-   
    .footer__title {
     font-size: 32px;
     text-decoration: underline;
@@ -28,8 +25,6 @@
    }
    
    .footer__menu--payment {
-    display: flex;
-    flex-direction: row;
     justify-content: space-between;
     align-items: center;
    }

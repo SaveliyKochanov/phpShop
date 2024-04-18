@@ -113,30 +113,9 @@
 				</div>
 			</div>
 		</main>
-		<!-- <section class="cards">
-			<div class="container">
-				<h2>Популярные категории</h2>
-				<ul class="cards__list">
-					<li class="cards__list-item">
-						<article class="card">
-							<img
-								class="card__image"
-								src="./images/shop-images/card-1.png"
-								alt=""
-							/>
-							<button class="card__favourite">
-								<img
-									class="card__favourite-image"
-									src="images/shop-images/heart.svg"
-									alt=""
-								/>
-							</button>
-						</article>
-					</li>
-				</ul>
-			</div>
-		</section>
-		 -->
+		
+		<? include './view/partials/footer.php'?>
+
 		<script src="script.js"></script>
 	</body>
 </html>
