@@ -94,8 +94,8 @@ $cards = $filteredProducts;
 		<link rel="stylesheet" href="./view/partials/header.css">
     	<link rel="stylesheet" href="./view/partials/footer.css">
     	<link rel="stylesheet" href="./view/partials/fot-hed-media.css">
-		<link rel="stylesheet" href="./view/pages/man/man.css" />
-		<link rel="stylesheet" href="./view/pages/man/media.css" />
+		<link rel="stylesheet" href="./view/pages/catalog/catalog.css" />
+		<link rel="stylesheet" href="./view/pages/catalog/media.css" />
 
 		<title>MEN</title>
 	</head>
@@ -198,6 +198,6 @@ $cards = $filteredProducts;
 		</main>
 		<? include './view/partials/footer.php'?>
 		
-		<script src="./view/pages/man/man.js"></script>
+		<script src="./view/pages/catalog/catalog.js"></script>
 	</body>
 </html>
