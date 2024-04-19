@@ -31,6 +31,7 @@ Router::myPost('/deleteProduct', Products::class, 'DeleteProduct');
 Router::myPost('/addProduct', Products::class, 'AddProduct');
 Router::myPost('/cartUpdateQuantity', Cart::class, 'UpdateQuantity');
 Router::myPost('/cartDeletePosition', Cart::class, 'DeletePosition');
+Router::myPost('/addToCart', Cart::class, 'addToCart');
 
 
 

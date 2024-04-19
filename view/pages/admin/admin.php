@@ -1,6 +1,6 @@
 <?
 		use servises\Connect;
-	// if($_SESSION['role'] < 49) header("Location: /"); //check user role
+	if($_SESSION['role'] < 49) header("Location: /"); //check user role
 	$ProductVariants = mysqli_fetch_all(Connect::$connect->query("SELECT * FROM ProductVariants ORDER BY `ProductVariants`.`ProductID` ASC"), MYSQLI_ASSOC);
 ?>
 

@@ -6,6 +6,7 @@
 		<link rel="stylesheet" href="./view/global.css" />
 		<link rel="stylesheet" href="./view/partials/header.css">
     	<link rel="stylesheet" href="./view/partials/footer.css">
+    	<link rel="stylesheet" href="./view/partials/fot-hed-media.css">
 		<link rel="stylesheet" href="./view/pages/product/product.css" />
 		<link rel="stylesheet" href="./view/pages/product/media.css" />
 		<title>Product</title>
@@ -17,89 +18,63 @@
 	<main class="main">
    <div class="container">
     <div class="main__content">
+      <?
+         use servises\Connect;
+         if(!isset($_GET['ProductID'])) header('Location: /');
+         $ProductId = $_GET['ProductID'];
+         $Product = mysqli_fetch_assoc(Connect::$connect->query("SELECT * FROM Products WHERE ProductID = $ProductId"));
+         $ProductVariants = mysqli_fetch_all(Connect::$connect->query("SELECT * FROM ProductVariants WHERE ProductId = $ProductId"), MYSQLI_ASSOC);
+      ?>
      <div class="main__slider">
       <ul class="main__slider-list">
        <li class="main__slider-item">
         <img
          class="main__slider-image"
-         src="images/main__slider-image.png"
-         alt=""
+         src="<?= $Product['ImageURL']?>"
+         alt="<?= $Product['ProductName']?>"
         />
        </li>
        <li class="main__slider-item">
         <img
          class="main__slider-image"
-         src="images/main__slider-image.png"
-         alt=""
+         src="<?= $Product['ImageURL']?>"
+         alt="<?= $Product['ProductName']?>"
         />
        </li>
       </ul>
      </div>
-     <form class="main__description">
+     <form class="main__description" action="/addToCart" method="post">
       <p class="description-name">
-       Черное худи
+         <?= $Product['ProductBrand'].' | '. $Product['ProductName']?>
       </p>
-      <p class="description-price">1200</p>
+      <p class="description-price"><?= $ProductVariants[0]['Price']?></p>
       <p class="description-size">Выберите размер</p>
       <fieldset class="choose-size">
        <div class="size-selector">
-        <input
-         type="radio"
-         id="size-xs"
-         name="size"
-         value="xs"
-         class="size-selector__radio"
-        />
-        <label for="size-xs" class="size-selector__label">XS</label>
+         <? for ($i=0; $i < count($ProductVariants); $i++) { 
+            
+            ?>
 
-        <input
-         type="radio"
-         id="size-s"
-         name="size"
-         value="s"
-         class="size-selector__radio"
-        />
-        <label for="size-s" class="size-selector__label">S</label>
-
-        <input
-         type="radio"
-         id="size-m"
-         name="size"
-         value="m"
-         class="size-selector__radio"
-        />
-        <label for="size-m" class="size-selector__label">M</label>
-
-        <input
-         type="radio"
-         id="size-l"
-         name="size"
-         value="l"
-         class="size-selector__radio"
-        />
-        <label for="size-l" class="size-selector__label">L</label>
-
-        <input
-         type="radio"
-         id="size-xl"
-         name="size"
-         value="xl"
-         class="size-selector__radio"
-        />
-        <label for="size-xl" class="size-selector__label">XL</label>
+            <input
+                  type="radio"
+                  id="size-<?= $ProductVariants[$i]['Size']?>"
+                  name="size"
+                  value="<?= $ProductVariants[$i]['Size']?>"
+                  class="size-selector__radio"
+                  <?= $i == 0 ? 'checked' : ''?>
+               />
+               <label for="size-<?= $ProductVariants[$i]['Size']?>" class="size-selector__label"><?= $ProductVariants[$i]['Size']?></label>
+         <?}?>
+        
        </div>
+
       </fieldset>
-      <button class="add-to-cart--button button">
-       Добавить в корзину
-      </button>
+		<input type="hidden" name="ProductID" value="<?=$ProductId?>">
+		<button class="add-to-cart--button button" type="submit">
+			Добавить в корзину
+		</button>
       <p class="description-text">
-       какая-то заебательская кофта какая-то заебательская кофта какая-то
-       заебательская кофта какая-то заебательская кофта какая-то
-       заебательская кофта какая-то заебательская кофта какая-то
-       заебательская кофта какая-то заебательская кофта какая-то
-       заебательская кофта какая-то заебательская кофта какая-то
-       заебательская кофта какая-то заебательская кофта какая-то
-       заебательская кофта
+         <?=$Product['Description']?>
       </p>
      </form>
     </div>

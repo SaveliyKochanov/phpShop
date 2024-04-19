@@ -189,7 +189,7 @@ $cards = $filteredProducts;
 							$product = mysqli_fetch_all(Connect::$connect->query("SELECT * FROM Products WHERE ImageURL = '$url'"), MYSQLI_ASSOC)[0];
 						?>
 						<li class="cards__list-item">
-							<a class="cards__list-link" href="">
+							<a class="cards__list-link" href="/product?ProductID=<?=$product['ProductID']?>">
 								<article class="card">
 									<img class="card__image" src="<?= $product["ImageURL"]?>" alt="<?= $product["ProductName"]?>">
 									<p class="card__name"><?= $product["ProductName"]?></p>

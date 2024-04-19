@@ -1,4 +1,5 @@
 <?
+session_start();
 require './src/servises/DataBase.php';
 require './src/utils/myController/Router.php';
 require './src/controller/Auth.php';

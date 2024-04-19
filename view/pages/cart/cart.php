@@ -34,7 +34,6 @@
 		<main class="main">
 			<div class="container">
 				<?if($countCartItems != 0){?>
-				<h1 class="main__header">КОРЗИНА</h1>
 				<div class="main__content">
 					<div class="main__shopping-cart">
 						<ul class="main__cart-list">

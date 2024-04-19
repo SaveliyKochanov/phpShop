@@ -3,22 +3,22 @@
 	inline-size: 1700px;
 	block-size: 100%;
 	padding: 0 15px;
-   }
-   
-   .main {
+}
+
+.main {
 	margin: 0 0 176px 0;
-   }
-   
-   .main__content {
+}
+
+.main__content {
 	display: flex;
 	column-gap: 43px;
-   }
-   
-   .main__slider {
+}
+
+.main__slider {
 	overflow: hidden;
-   }
-   
-   .main__slider-list {
+}
+
+.main__slider-list {
 	display: flex;
 	column-gap: 6px;
 	overflow-x: scroll;
@@ -26,27 +26,27 @@
 	will-change: transform;
 	user-select: none;
 	scrollbar-width: none;
-   }
-   
-   .main__slider-item {
-	/* max-inline-size: 100%; */
-   }
-   
-   .main__slider-image {
+}
+
+.main__slider-item {
+	max-inline-size: 100%;
+}
+
+.main__slider-image {
 	inline-size: 100%;
-   }
-   
-   .main__description {
+}
+
+.main__description {
 	inline-size: 429px;
 	padding: 43px 0 0 0;
-   }
-   
-   .description-name {
+}
+
+.description-name {
 	font-size: 40px;
 	margin: 0 0 13px 0;
-   }
-   
-   .description-price {
+}
+
+.description-price {
 	display: inline-block;
 	margin: 0 0 33px 0;
 	color: #fff;
@@ -54,28 +54,28 @@
 	background-color: #3c4242;
 	border-radius: 12px;
 	margin: 0 0 33px 0;
-   }
-   
-   .description-size {
+}
+
+.description-size {
 	margin: 0 0 25px 0;
-   }
-   
-   .choose-size {
+}
+
+.choose-size {
 	border: none;
 	margin: 0 0 27px;
 	padding: 0;
-   }
-   
-   .size-selector {
+}
+
+.size-selector {
 	display: flex;
 	column-gap: 24px;
-   }
-   
-   .size-selector__radio {
+}
+
+.size-selector__radio {
 	display: none;
-   }
-   
-   .size-selector__label {
+}
+
+.size-selector__label {
 	inline-size: 38px;
 	block-size: 38px;
 	text-align: center;
@@ -85,19 +85,19 @@
 	border-radius: 12px;
 	cursor: pointer;
 	transition: background-color 0.3s, color 0.3s;
-   }
-   
-   .size-selector__label:hover {
+}
+
+.size-selector__label:hover {
 	background-color: #f0f0f0;
-   }
-   
-   .size-selectorradio:checked + .size-selectorlabel {
+}
+
+.size-selector__radio:checked + .size-selector__label {
 	background-color: #333; /* Цвет фона для выбранной кнопки */
 	color: #fff; /* Цвет текста для выбранной кнопки */
 	border-color: #333; /* Граница для выбранной кнопки */
-   }
-   
-   .add-to-cart--button {
+}
+
+.add-to-cart--button {
 	color: #fff;
 	font-size: 18px;
 	text-align: center;
@@ -108,12 +108,12 @@
 	padding: 12px 0;
 	transition: background-color 0.3s, color 0.3s;
 	margin: 0 0 36px 0;
-   }
-   
-   .add-to-cart--button:hover {
+}
+
+.add-to-cart--button:hover {
 	background-color: #59bf57;
-   }
-   
-   .description-text {
+}
+
+.description-text {
 	font-size: 18px;
-   }
+}

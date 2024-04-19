@@ -30,7 +30,7 @@ class Auth{
             $result = mysqli_fetch_assoc($result);
             if($password == $result['Password']){
                 session_start();
-                $_SESSION['email'] = $result['Email'];
+                $_SESSION['UserID'] = $result['UserID'];
                 $_SESSION['role'] = $result['Role'];
             }
         }
