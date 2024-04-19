@@ -83,31 +83,31 @@
 				<div class="banners">
 					<ul class="banners__list">
 						<li class="banners__item spring-summer-banner">
-							<h2 class="banners__item-header">ВЕСНА'24</h2>
+							<h2 class="banners__item-header">ВСЁ ДЛЯ ЧЁРНЫХ</h2>
 							<div class="banners__item-links">
-								<a class="banners__man-link" href="">Для неё</a>
-								<a class="banners__woman-link" href="/man">Для него</a>
+								<a class="banners__man-link" href="/catalog?CategoryID=2">Для неё</a>
+								<a class="banners__man-link" href="/catalog?CategoryID=1">Для него</a>
 							</div>
 						</li>
 						<li class="banners__item jacket-banner">
 							<h2 class="banners__item-header">КУРТКИ</h2>
 							<div class="banners__item-links">
-								<a class="banners__man-link" href="">Для неё</a>
-								<a class="banners__woman-link" href="">Для него</a>
+							<a class="banners__man-link" href="/catalog?CategoryID=2">Для неё</a>
+								<a class="banners__man-link" href="/catalog?CategoryID=1">Для него</a>
 							</div>
 						</li>
 						<li class="banners__item denim-banner">
 							<h2 class="banners__item-header">ДЕНИМ</h2>
 							<div class="banners__item-links">
-								<a class="banners__man-link" href="">Для неё</a>
-								<a class="banners__woman-link" href="">Для него</a>
+								<a class="banners__man-link" href="/catalog?CategoryID=2">Для неё</a>
+								<a class="banners__man-link" href="/catalog?CategoryID=1">Для него</a>
 							</div>
 						</li>
 						<li class="banners__item shoes-banner">
 							<h2 class="banners__item-header">КРОССОВКИ</h2>
 							<div class="banners__item-links">
-								<a class="banners__man-link" href="">Для неё</a>
-								<a class="banners__woman-link" href="">Для него</a>
+							<a class="banners__man-link" href="/catalog?CategoryID=2">Для неё</a>
+								<a class="banners__man-link" href="/catalog?CategoryID=1">Для него</a>
 							</div>
 						</li>
 					</ul>

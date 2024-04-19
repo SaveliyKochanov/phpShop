@@ -1,0 +1,34 @@
+@media (max-width: 1025px) {
+	.container {
+		inline-size: 1085px;
+	}
+}
+
+@media (max-width: 768px) {
+	.container {
+		inline-size: 728px;
+	}
+
+	.main__content {
+		flex-direction: column;
+		row-gap: 13px;
+	}
+	.main {
+		margin: 200px 0;
+	}
+}
+
+@media (max-width: 480px) {
+	.container {
+		inline-size: 440px;
+	}
+
+	.summary-details__button {
+		font-size: 16px;
+		color: #fff;
+		background-color: #00c2a8;
+		border: none;
+		padding: 17px 80px;
+		transition: background-color 0.3s ease, box-shadow 0.3s ease;
+	}
+}

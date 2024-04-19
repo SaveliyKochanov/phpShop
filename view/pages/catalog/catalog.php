@@ -1,14 +1,18 @@
 <?
 
 use servises\Connect;
-$data = Connect::$connect->query("SELECT * FROM Products WHERE CategoryID = 1");
+$CategoryID = 1;
+if(isset($_GET['CategoryID'])){
+	$CategoryID = $_GET['CategoryID'];
+}
+$data = Connect::$connect->query("SELECT * FROM Products WHERE CategoryID = $CategoryID");
 $products = mysqli_fetch_all($data, MYSQLI_ASSOC);
 $productsCount = count($products);
 
 $AllProducts = mysqli_fetch_all(Connect::$connect->query("SELECT Products.ProductID, Products.ProductName, Products.ProductBrand, Products.Description, Products.ImageURL, ProductVariants.Size, ProductVariants.Price, ProductVariants.Stock
 FROM Products
 JOIN ProductVariants ON Products.ProductID = ProductVariants.ProductID
-WHERE Products.CategoryID = 1
+WHERE Products.CategoryID = $CategoryID
 ORDER BY Products.ProductName, ProductVariants.Size;
 "), MYSQLI_ASSOC);
 
@@ -18,9 +22,9 @@ MIN(Price) AS CheapestPrice,
 MAX(Price) AS MostExpensivePrice
 FROM ProductVariants
 JOIN Products ON ProductVariants.ProductID = Products.ProductID
-WHERE Products.CategoryID = 1;
+WHERE Products.CategoryID = $CategoryID;
 "))[0];
-$cards = mysqli_fetch_all(Connect::$connect->query("SELECT DISTINCT ImageURL FROM Products WHERE CategoryID = 1"), MYSQLI_ASSOC);
+$cards = mysqli_fetch_all(Connect::$connect->query("SELECT DISTINCT ImageURL FROM Products WHERE CategoryID = $CategoryID"), MYSQLI_ASSOC);
 
 if (isset($_GET['filter'])) {
 	$MinPrice = $_GET['price-min'] ?? '';
@@ -65,7 +69,7 @@ if (!empty($selectedSizes)) {
 $query = "SELECT DISTINCT Products.ProductID, Products.ProductName, Products.ProductBrand, Products.Description, Products.ImageURL
           FROM Products
           JOIN ProductVariants ON Products.ProductID = ProductVariants.ProductID
-          WHERE Products.CategoryID = 1";
+          WHERE Products.CategoryID = $CategoryID";
           
 if (!empty($queryParts)) {
     $query .= " AND " . implode(' AND ', $queryParts);
@@ -97,7 +101,7 @@ $cards = $filteredProducts;
 		<link rel="stylesheet" href="./view/pages/catalog/catalog.css" />
 		<link rel="stylesheet" href="./view/pages/catalog/media.css" />
 
-		<title>MEN</title>
+		<title>Catalog</title>
 	</head>
 	<body>
 		<? include './view/partials/header.php'?>
@@ -105,7 +109,7 @@ $cards = $filteredProducts;
 			<div class="container">
 				<div class="top-block">
 					<div class="top-block__heading">
-						<h1 class="top-block__title">ОДЕЖДА И ОБУВЬ ДЛЯ МУЖЧИН</h1>
+						<h1 class="top-block__title">ОДЕЖДА И ОБУВЬ ДЛЯ <?= $CategoryID == 1 ? 'МУЖЧИН' : 'ЖЕНЩИН'?></h1>
 						<p class="top-block__count"><?= $productsCount?></p>
 					</div>
 				</div>
@@ -118,7 +122,7 @@ $cards = $filteredProducts;
 
 							<ul class="dropdown-menu__list">
 							<form action="<?$_GET['rout']?>" method="get">
-							
+								<input type="hidden" name="CategoryID" value="<?= $CategoryID?>">
 								<li class="dropdown-menu__item">
 									
 									<p class="dropdown-menu__item-header">Цена</p>
@@ -132,7 +136,7 @@ $cards = $filteredProducts;
 									<ul class="dropdown-menu__item-content">
 										<?
 											
-												$brands = Connect::$connect->query("SELECT DISTINCT ProductBrand FROM Products WHERE CategoryID = 1 ORDER BY ProductBrand");
+												$brands = Connect::$connect->query("SELECT DISTINCT ProductBrand FROM Products WHERE CategoryID = $CategoryID ORDER BY ProductBrand");
 												foreach($brands as $brand):
 										?>
 										<li class="dropdown-menu__item-option">
@@ -168,6 +172,7 @@ $cards = $filteredProducts;
 
 								<li class="dropdown-menu__item">
 								<form action="<?=$_GET['rout']?>" method="get">
+									<input type="hidden" name="CategoryID" value="<?= $CategoryID?>">
 									<button>Очистить</button>
 								</form>
 								</li>

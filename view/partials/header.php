@@ -7,10 +7,10 @@ print_r($_SESSION);
         <nav class="header__nav">
         <ul class="header__nav-list">
         <li class="nav-list__item">
-        <a class="nav-list__link" href="">Мужчинам</a>
+        <a class="nav-list__link" href="/catalog?CategoryID=1">Мужчинам</a>
         </li>
         <li class="nav-list__item">
-        <a class="nav-list__link" href="">Женщинам</a>
+        <a class="nav-list__link" href="/catalog?CategoryID=2">Женщинам</a>
         </li>
         </ul>
         <button class="header__nav-button">
@@ -47,7 +47,7 @@ print_r($_SESSION);
                 </a>
             </li>
             <li class="actions-list__item">
-                <a class="actions-list__link" href="">
+                <a class="actions-list__link" href="/cart">
                     <img
                     class="action-list__item-image"
                     src="./images/header-icons/header__shoping-icon.svg"

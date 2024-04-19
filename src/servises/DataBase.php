@@ -73,10 +73,10 @@ class Connect{
         self::$connect->query("CREATE TABLE IF NOT EXISTS CartItems (
             CartItemID INT AUTO_INCREMENT PRIMARY KEY,
             UserID INT NOT NULL,
-            ProductID INT NOT NULL,
+            VariantID INT NOT NULL,
             Quantity INT NOT NULL DEFAULT 1,
             FOREIGN KEY (UserID) REFERENCES Users(UserID),
-            FOREIGN KEY (ProductID) REFERENCES Products(ProductID)
+            FOREIGN KEY (VariantID) REFERENCES ProductVariants(VariantID)
         )");
     }
 

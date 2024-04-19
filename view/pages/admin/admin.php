@@ -1,7 +1,7 @@
 <?
 		use servises\Connect;
 	// if($_SESSION['role'] < 49) header("Location: /"); //check user role
-	$ProductVariants = mysqli_fetch_all(Connect::$connect->query("SELECT * FROM ProductVariants"), MYSQLI_ASSOC);
+	$ProductVariants = mysqli_fetch_all(Connect::$connect->query("SELECT * FROM ProductVariants ORDER BY `ProductVariants`.`ProductID` ASC"), MYSQLI_ASSOC);
 ?>
 
 <!DOCTYPE html>
@@ -29,23 +29,23 @@
 								<td class="photo">
 									Фото
 								</td>
+								<td class="brand">
+									Бренд
+								</td>
 								<td class="name">
 									Название
 								</td>
 								<td class="category">
 									Категория
 								</td>
-								<td class="brand">
-									Бренд
-								</td>
 								<td class="size">
 									Размер
 								</td>
-								<td class="quantity">
-									Кол-во
-								</td>
 								<td class="price">
 									Цена
+								</td>
+								<td class="quantity">
+									Кол-во
 								</td>
 								<td class="price">
 									Удаление
@@ -63,9 +63,9 @@
 							
 							<tr>
 								<td><img src="<?= $product['ImageURL']?>" alt="<?= $product['ImageURL']?>" style="width: 80px; height 80px;"></td>
+								<td><?= $product['ProductBrand']?></td>
 								<td><?= $product['ProductName']?></td>
 								<td><?= $product['CategoryID'] == 1 ? 'Мужское' : 'Женское' ?></td>
-								<td><?= $product['ProductBrand']?></td>
 								<td><?= $item['Size']?></td>
 								<td><?= $item['Price']?></td>
 								<td><?= $item['Stock']?></td>

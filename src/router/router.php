@@ -1,6 +1,7 @@
 <?
 use utils\myController\Router;
 use controller\Auth;
+use controller\Cart;
 use controller\Creator;
 use controller\Products;
 use servises\Connect;
@@ -18,6 +19,7 @@ Router::myGet('/admin','admin');
 Router::myGet('/auth', 'auth');
 Router::myGet('/reg', 'reg');
 Router::myGet('/catalog', 'catalog');
+Router::myGet('/cart', 'cart');
 Router::myGet('/product', 'product');
 
 
@@ -27,6 +29,8 @@ Router::myPost('/login', Auth::class, 'login');
 Router::myPost('/logout', Auth::class, 'logout');
 Router::myPost('/deleteProduct', Products::class, 'DeleteProduct');
 Router::myPost('/addProduct', Products::class, 'AddProduct');
+Router::myPost('/cartUpdateQuantity', Cart::class, 'UpdateQuantity');
+Router::myPost('/cartDeletePosition', Cart::class, 'DeletePosition');
 
 
 
