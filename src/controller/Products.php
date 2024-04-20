@@ -48,9 +48,14 @@ class Products{
     public function DeleteProduct($data){
         $VariantID = $data['VariantID'];
         $productID = mysqli_fetch_assoc(Connect::$connect->query("SELECT ProductID FROM ProductVariants WHERE VariantID = $VariantID"))["ProductID"];
+        Connect::$connect->query("DELETE FROM CartItems WHERE VariantID = $VariantID");
         Connect::$connect->query("DELETE FROM ProductVariants WHERE VariantID = $VariantID");
-        Connect::$connect->query("DELETE FROM Products WHERE ProductID = $productID");
-        header("Location: /admin");
+        try{
+            Connect::$connect->query("DELETE FROM Products WHERE ProductID = $productID");
+        }
+        finally{
+            header("Location: /admin");
+        }
     }
 
     
