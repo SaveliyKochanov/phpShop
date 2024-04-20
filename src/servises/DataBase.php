@@ -20,7 +20,7 @@ class Connect{
 
             $this->CreateTables();
             $this->CheckCategories();
-            $this->CreateBaseProducts();
+            //$this->CreateBaseProducts();
         }
         
     }
@@ -113,14 +113,14 @@ class Connect{
             (2, 'NIKE', 'Женское платье', 'Описание женского платья', './images/gown.webp'),
             (2, 'Adidas', 'Женский свитер', 'Описание женского свитера', './images/handcuffs.webp')");
 
-        self::$connect->query("INSERT INTO Products (CategoryID, ProductBrand, ProductName, Description, ImageURL) VALUES
-        (1, 'Nike', 'Кроссовки Air Max', 'Удобные кроссовки для бега', './images/check.png'),
-        (1, 'Adidas', 'Спортивные штаны', 'Штаны для тренировок и повседневной носки', './images/exit.png'),
-        (1, 'Calvin Klein', 'Джинсы Slim Fit', 'Джинсы современного кроя', './images/home.png'),
-        (1, 'Balenciaga', 'Куртка Oversize', 'Модная куртка оверсайз для прохладной погоды', './images/main_slider-image.png')
-        ");
-            self::CreateBaseVariants();
-        }
+            self::$connect->query("INSERT INTO Products (CategoryID, ProductBrand, ProductName, Description, ImageURL) VALUES
+            (1, 'Nike', 'Кроссовки Air Max', 'Удобные кроссовки для бега', './images/check.png'),
+            (1, 'Adidas', 'Спортивные штаны', 'Штаны для тренировок и повседневной носки', './images/exit.png'),
+            (1, 'Calvin Klein', 'Джинсы Slim Fit', 'Джинсы современного кроя', './images/home.png'),
+            (1, 'Balenciaga', 'Куртка Oversize', 'Модная куртка оверсайз для прохладной погоды', './images/main_slider-image.png')
+            ");
+                self::CreateBaseVariants();
+            }
         
         
 
