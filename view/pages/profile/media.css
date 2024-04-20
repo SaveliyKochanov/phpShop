@@ -1,0 +1,28 @@
+@media (max-width: 1025px) {
+	.container {
+	 inline-size: 1085px;
+	}
+   }
+   
+   @media (max-width: 768px) {
+	.container {
+	 inline-size: 728px;
+	}
+	
+   }
+@media (max-width: 768px) {
+	.container {
+		inline-size: 728px;
+	}
+	.order-item {
+		flex-direction: column;
+		align-items: flex-start;
+		border-bottom: 1px solid black;
+	}
+}
+
+@media (max-width: 480px) {
+	.container {
+		inline-size: 440px;
+	}
+}

@@ -8,14 +8,16 @@
 .main {
 	margin: 0 0 176px 0;
 }
-
+.main__slider-item{
+	block-size: auto;
+}
 .main__content {
 	display: flex;
 	column-gap: 43px;
 }
 
 .main__slider {
-	overflow: hidden;
+	block-size: 100%;
 }
 
 .main__slider-list {
@@ -28,13 +30,6 @@
 	scrollbar-width: none;
 }
 
-.main__slider-item {
-	max-inline-size: 100%;
-}
-
-.main__slider-image {
-	inline-size: 100%;
-}
 
 .main__description {
 	inline-size: 429px;

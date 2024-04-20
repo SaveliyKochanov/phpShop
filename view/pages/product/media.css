@@ -10,25 +10,22 @@
 	}
 
 	.main {
-		margin: 0 0 59px 0;
+		margin: 0 0 400px 0;
 	}
 
 	.main__content {
 		flex-direction: column;
 	}
-
 	.main__slider-list {
 		white-space: nowrap;
-		overflow-x: auto;
 	}
 
 	.main__slider-item {
-		min-inline-size: 100%;
+		inline-size: 100%;
 	}
 
 	.main__slider-image {
 		inline-size: 100%;
-		block-size: auto;
 	}
 
 	.main__description {

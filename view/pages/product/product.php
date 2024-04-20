@@ -26,9 +26,9 @@
          $ProductVariants = mysqli_fetch_all(Connect::$connect->query("SELECT * FROM ProductVariants WHERE ProductId = $ProductId"), MYSQLI_ASSOC);
       ?>
      <div class="main__slider">
-      <ul class="main__slider-list">
+     <ul class="main__slider-list">
        <li class="main__slider-item">
-        <img
+       <img
          class="main__slider-image"
          src="<?= $Product['ImageURL']?>"
          alt="<?= $Product['ProductName']?>"
@@ -42,6 +42,7 @@
         />
        </li>
       </ul>
+        
      </div>
      <form class="main__description" action="/addToCart" method="post">
       <p class="description-name">

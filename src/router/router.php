@@ -21,6 +21,7 @@ Router::myGet('/reg', 'reg');
 Router::myGet('/catalog', 'catalog');
 Router::myGet('/cart', 'cart');
 Router::myGet('/product', 'product');
+Router::myGet('/profile', 'profile');
 
 
 //post
