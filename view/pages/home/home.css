@@ -13,12 +13,14 @@
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
+	padding: 160px 20px;
 	margin-bottom: 61px;
 }
 
 .main__header {
 	font-size: 70px;
-	padding: 120px 0 0 70px;
+	color: #fff;
+	font-weight: 500;
 }
 /* TICKER */
 .ticker {

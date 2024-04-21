@@ -10,11 +10,10 @@
 	}
 
 	.main__content {
-		flex-direction: column;
 		row-gap: 13px;
 	}
-	.main {
-		margin: 200px 0;
+	.header {
+		/* margin: 0 0 50px 0; */
 	}
 }
 

@@ -91,45 +91,49 @@ $cards = $filteredProducts;
 ?>
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="./view/global.css" />
-		<link rel="stylesheet" href="./view/partials/header.css">
-    	<link rel="stylesheet" href="./view/partials/footer.css">
-    	<link rel="stylesheet" href="./view/partials/fot-hed-media.css">
-		<link rel="stylesheet" href="./view/pages/catalog/catalog.css" />
-		<link rel="stylesheet" href="./view/pages/catalog/media.css" />
 
-		<title>Catalog</title>
-	</head>
-	<body>
-		<? include './view/partials/header.php'?>
-		<main class="main">
-			<div class="container">
-				<div class="top-block">
-					<div class="top-block__heading">
-						<h1 class="top-block__title">ОДЕЖДА И ОБУВЬ ДЛЯ <?= $CategoryID == 1 ? 'МУЖЧИН' : 'ЖЕНЩИН'?></h1>
-						<p class="top-block__count"><?= $productsCount?></p>
-					</div>
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="./view/global.css" />
+	<link rel="stylesheet" href="./view/partials/header.css">
+	<link rel="stylesheet" href="./view/partials/footer.css">
+	<link rel="stylesheet" href="./view/partials/fot-hed-media.css">
+	<link rel="stylesheet" href="./view/pages/catalog/catalog.css" />
+	<link rel="stylesheet" href="./view/pages/catalog/media.css" />
+
+	<title>Catalog</title>
+</head>
+
+<body>
+	<? include './view/partials/header.php'?>
+	<main class="main">
+		<div class="container">
+			<div class="top-block">
+				<div class="top-block__heading">
+					<h1 class="top-block__title">ОДЕЖДА И ОБУВЬ ДЛЯ <?= $CategoryID == 1 ? 'МУЖЧИН' : 'ЖЕНЩИН'?></h1>
+					<p class="top-block__count"><?= $productsCount?></p>
 				</div>
-				<div class="filters-block">
-					<div class="filters-block__filters">
-						<button class="filters-block__text">фильтры</button>
-						<nav class="dropdown-menu">
-							<h3 class="dropdown-menu__header">ФИЛЬТРЫ</h3>
-							
+			</div>
+			<div class="filters-block">
+				<div class="filters-block__filters">
+					<button class="filters-block__text">фильтры</button>
+					<nav class="dropdown-menu">
+						<h3 class="dropdown-menu__header">ФИЛЬТРЫ</h3>
 
-							<ul class="dropdown-menu__list">
+
+						<ul class="dropdown-menu__list">
 							<form action="<?$_GET['rout']?>" method="get">
 								<input type="hidden" name="CategoryID" value="<?= $CategoryID?>">
 								<li class="dropdown-menu__item">
-									
+
 									<p class="dropdown-menu__item-header">Цена</p>
 									<label class="dropdown-menu__input-label" for="">от</label>
-									<input class="dropdown-menu__input" type="number" id="price-min" name="price-min" value="<?= floor($MinMaxPrice[0])?>">
+									<input class="dropdown-menu__input" type="number" id="price-min" name="price-min"
+										value="<?= floor($MinMaxPrice[0])?>">
 									<label class="dropdown-menu__input-label" for="">до</label>
-									<input class="dropdown-menu__input" type="number" id="price-max" name="price-max" value="<?= round($MinMaxPrice[1])?>">
+									<input class="dropdown-menu__input" type="number" id="price-max" name="price-max"
+										value="<?= round($MinMaxPrice[1])?>">
 								</li>
 								<li class="dropdown-menu__item">
 									<p class="dropdown-menu__item-header brands">Бренд</p>
@@ -140,9 +144,11 @@ $cards = $filteredProducts;
 												foreach($brands as $brand):
 										?>
 										<li class="dropdown-menu__item-option">
-											<input type="checkbox" id="<?=$brand["ProductBrand"]?>" name="brand[]" value="<?=$brand["ProductBrand"]?>" <?=!empty($_GET["brand"]) && in_array($brand["ProductBrand"], $_GET["brand"]) ? 'checked' : ''?>>
+											<input type="checkbox" id="<?=$brand["ProductBrand"]?>" name="brand[]"
+												value="<?=$brand["ProductBrand"]?>"
+												<?=!empty($_GET["brand"]) && in_array($brand["ProductBrand"], $_GET["brand"]) ? 'checked' : ''?>>
 											<label for="<?=$brand["ProductBrand"]?>"><?=$brand["ProductBrand"]?></label>
-										</li> 
+										</li>
 										<?endforeach;?>
 									</ul>
 								</li>
@@ -158,51 +164,55 @@ $cards = $filteredProducts;
 											foreach($sizies as $size):
 										?>
 										<li class="dropdown-menu__item-option">
-										<input type="checkbox" id="<?=$size["Size"]?>" name="size[]" value="<?=$size["Size"]?>" <?=!empty($_GET["size"]) && in_array($size["Size"], $_GET["size"]) ? 'checked' : ''?>>
+											<input type="checkbox" id="<?=$size["Size"]?>" name="size[]"
+												value="<?=$size["Size"]?>"
+												<?=!empty($_GET["size"]) && in_array($size["Size"], $_GET["size"]) ? 'checked' : ''?>>
 
 											<label for="<?=$size["Size"]?>"><?=$size["Size"]?></label>
-										</li> 
+										</li>
 										<?endforeach;?>
 									</ul>
 								</li>
 								<li class="dropdown-menu__item">
-								<button type="submit" name="filter" value="1">Фильтровать</button>
+									<button type="submit" name="filter" value="1">Фильтровать</button>
 								</li>
 							</form>
 
-								<li class="dropdown-menu__item">
+							<li class="dropdown-menu__item">
 								<form action="<?=$_GET['rout']?>" method="get">
 									<input type="hidden" name="CategoryID" value="<?= $CategoryID?>">
 									<button>Очистить</button>
 								</form>
-								</li>
-							</ul>
+							</li>
+						</ul>
 
-						</nav>
-					</div>
+					</nav>
 				</div>
-				<div class="cards">
-					<ul class="cards__list">
-						<?
+			</div>
+			<div class="cards">
+				<ul class="cards__list">
+					<?
 							foreach($cards as $productik):
 							$url = 	$productik["ImageURL"];
 							$product = mysqli_fetch_all(Connect::$connect->query("SELECT * FROM Products WHERE ImageURL = '$url'"), MYSQLI_ASSOC)[0];
 						?>
-						<li class="cards__list-item">
-							<a class="cards__list-link" href="/product?ProductID=<?=$product['ProductID']?>">
-								<article class="card">
-									<img class="card__image" src="<?= $product["ImageURL"]?>" alt="<?= $product["ProductName"]?>">
-									<p class="card__name"><?= $product["ProductName"]?></p>
-								</article>
-							</a>
-						</li>
-						<? endforeach; ?>
-					</ul>
-				</div>
+					<li class="cards__list-item">
+						<a class="cards__list-link" href="/product?ProductID=<?=$product['ProductID']?>">
+							<article class="card">
+								<img class="card__image" src="<?= $product["ImageURL"]?>"
+									alt="<?= $product["ProductName"]?>">
+								<p class="card__name"><?= $product["ProductName"]?></p>
+							</article>
+						</a>
+					</li>
+					<? endforeach; ?>
+				</ul>
 			</div>
-		</main>
-		<? include './view/partials/footer.php'?>
-		
-		<script src="./view/pages/catalog/catalog.js"></script>
-	</body>
+		</div>
+	</main>
+	<? include './view/partials/footer.php'?>
+
+	<script src="./view/pages/catalog/catalog.js"></script>
+</body>
+
 </html>
