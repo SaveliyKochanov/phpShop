@@ -10,6 +10,7 @@
 	$countCartItems = count($CartItems);
 	$countPositions = 0;
 	$total = 0;
+	$DeliveryPrice = 666;
 	$discount = 137;
 	$totalPrice = 0;
 ?>
@@ -110,7 +111,7 @@
 						</div>
 						<div class="summary-details__row">
 							<span class="summary-details__value">27 апреля</span>
-							<span class="summary-details__price">от 649 руб.</span>
+							<span class="summary-details__price"><?=$DeliveryPrice?> руб.</span>
 						</div>
 						<div class="summary-details__row">
 							<span class="summary-details__label">Всего позиций <?= $countPositions?></span>
@@ -122,11 +123,15 @@
 						</div>
 						<div class="summary-details__row summary-details__total-row">
 							<span class="summary-details__label">ИТОГО</span>
-							<span class="summary-details__total-price"><?= $totalPrice = $total - $discount?> Р</span>
+							<span class="summary-details__total-price"><?= $totalPrice = $total - $discount + $DeliveryPrice?> Р</span>
 						</div>
-						<button class="summary-details__button">
-							Сделать заказ
-						</button>
+						<form action="/cartCreateOrder" method="post">
+							<input type="hidden" name="TotalPrice" value="<?=$totalPrice?>">
+							<input type="hidden" name="DeliveryPrice" value="<?=$DeliveryPrice?>">
+							<button class="summary-details__button">
+								Сделать заказ
+							</button>
+						</form>
 					</div>
 				</div>
 				<?}else{?>

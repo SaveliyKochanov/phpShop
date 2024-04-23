@@ -1,3 +1,6 @@
+<?
+	if(isset($_SESSION['UserID'])) header('Location: /profile')
+?>
 <!DOCTYPE html>
 <html lang="en">
 	<head>

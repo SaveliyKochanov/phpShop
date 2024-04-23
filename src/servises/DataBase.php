@@ -20,7 +20,7 @@ class Connect{
 
             $this->CreateTables();
             $this->CheckCategories();
-            //$this->CreateBaseProducts();
+            $this->CreateBaseProducts();
         }
         
     }
@@ -58,17 +58,18 @@ class Connect{
             UserID INT,
             OrderDate DATETIME NOT NULL,
             Status VARCHAR(50) NOT NULL,
+            DeliveryPrice DECIMAL(10, 2) NOT NULL,
             TotalPrice DECIMAL(10, 2) NOT NULL,
             FOREIGN KEY (UserID) REFERENCES Users(UserID)
         )");
         self::$connect->query("CREATE TABLE IF NOT EXISTS OrderDetails (
             OrderDetailID INT AUTO_INCREMENT PRIMARY KEY,
             OrderID INT,
-            ProductID INT,
+            VariantID INT,
             Quantity INT NOT NULL,
             Price DECIMAL(10, 2) NOT NULL,
             FOREIGN KEY (OrderID) REFERENCES Orders(OrderID),
-            FOREIGN KEY (ProductID) REFERENCES Products(ProductID)
+            FOREIGN KEY (VariantID) REFERENCES ProductVariants(VariantID)
         )");
         self::$connect->query("CREATE TABLE IF NOT EXISTS CartItems (
             CartItemID INT AUTO_INCREMENT PRIMARY KEY,
