@@ -1,13 +1,3 @@
-.visually-hidden {
-	position: absolute;
-	inline-size: 1px;
-	block-size: 1px;
-	overflow: hidden;
-	clip: rect(0 0 0 0);
-	clip-path: inset(50%);
-	white-space: nowrap;
-}
-
 .container {
 	margin: 0 auto;
 	inline-size: 1700px;
@@ -59,7 +49,6 @@
 	margin: 0 0 33px;
 }
 
-
 .dropdown-menu__input {
 	inline-size: 133px;
 	padding: 6px 15px;
@@ -74,11 +63,11 @@
 }
 
 /* CARDS */
-.card{
+.card {
 	inline-size: 361px;
 	block-size: 479px;
 }
-.card__image{
+.card__image {
 	inline-size: 100%;
 	block-size: 100%;
 }

@@ -6,18 +6,19 @@
 }
 
 .main {
-	margin: 0 0 176px 0;
+	display: flex;
+	margin: 0 auto;
 }
-.main__slider-item{
-	block-size: auto;
-}
+
 .main__content {
 	display: flex;
 	column-gap: 43px;
+	align-items: center;
+	justify-content: center;
 }
 
-.main__slider {
-	block-size: 100%;
+.main__slider-image {
+	inline-size: 100%;
 }
 
 .main__slider-list {
@@ -25,14 +26,12 @@
 	column-gap: 6px;
 	overflow-x: scroll;
 	transition: transform 0.2s ease-out;
-	will-change: transform;
 	user-select: none;
 	scrollbar-width: none;
 }
 
-
 .main__description {
-	inline-size: 429px;
+	/* inline-size: 429px; */
 	padding: 43px 0 0 0;
 }
 
@@ -96,7 +95,7 @@
 	color: #fff;
 	font-size: 18px;
 	text-align: center;
-	inline-size: 345px;
+	inline-size: 100%;
 	background-color: #82d580;
 	border: none;
 	border-radius: 8px;

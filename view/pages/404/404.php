@@ -1,23 +1,26 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./view/global.css">
-    <link rel="stylesheet" href="./view/partials/header.css">
-    <link rel="stylesheet" href="./view/partials/footer.css">
-    <link rel="stylesheet" href="./view/partials/fot-hed-media.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="./view/global.css">
+	<link rel="stylesheet" href="./view/partials/header.css">
+	<link rel="stylesheet" href="./view/partials/footer.css">
+	<link rel="stylesheet" href="./view/partials/fot-hed-media.css">
 
-    <link rel="stylesheet" href="./view/pages/404/404.css">
-    <title>404</title>
+	<link rel="stylesheet" href="./view/pages/404/404.css">
+	<title>404</title>
 </head>
+
 <body>
-<? include './view/partials/header.php'?>
+	<? include './view/partials/header.php'?>
 
-<div class="container">
-    STARICA NOT FOUND -> OSHIBKA 404 IDI NAHUY
-</div>
+	<div class="container">
+		STARICA NOT FOUND -> OSHIBKA 404 IDI NAHUY
+	</div>
 
-<? include './view/partials/footer.php'?>
+	<? include './view/partials/footer.php'?>
 </body>
+
 </html>

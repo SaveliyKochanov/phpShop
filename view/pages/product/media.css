@@ -9,24 +9,12 @@
 		inline-size: 100%;
 	}
 
-	.main {
-		margin: 0 0 400px 0;
-	}
-
 	.main__content {
 		flex-direction: column;
 	}
-	.main__slider-list {
-		white-space: nowrap;
-	}
-
-	.main__slider-item {
+	/* .main__slider-image {
 		inline-size: 100%;
-	}
-
-	.main__slider-image {
-		inline-size: 100%;
-	}
+	} */
 
 	.main__description {
 		inline-size: 100%;
@@ -40,6 +28,6 @@
 
 @media (max-width: 480px) {
 	.container {
-		inline-size: 440px;
+		inline-size: 100%;
 	}
 }
